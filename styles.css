@@ -20,23 +20,64 @@ body{
 
 nav{
     margin-block:2rem;
-    padding:1.5rem;
     position:fixed;
-    left:10%;
-    width:90%;
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* logo */
+
+#logo{
+    background-color:blue;
+    padding:1.5rem;
+    border-radius:0rem 1rem 1rem 0rem;
+    font-size:xx-large;
+    font-weight:bold;
+    font-style:italic;
+    cursor: pointer;
+}
+
+#logo a{
+    text-decoration: none;
+    color: white;
+}
+
+/* links */
+
+#nav-links{
+    width:10%;
+    overflow: hidden;
+    margin-left:10%;
+    padding:1.5rem;
+    list-style:none;
     background-color:rgb(0, 0, 160);
     display:flex;
     justify-content: space-evenly;
-    align-items: center;
     border-radius:2.5rem 0rem 0rem 2.5rem;
+    transition: width 500ms linear;
 }
 
-#nav-links{
-    list-style:none;
-    display:flex;
-    justify-content: space-evenly;
-    width:100%;
+/* Hamburger */
+
+.ham{
+    position: relative;
+    height:2px;
+    width:25px;
+    background-color:white;
+    transition: all 750ms linear;
 }
+
+#ham{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    gap:0.25rem;
+    cursor:pointer;
+}
+
+/* Links styling */
 
 li a{
     color:white;
@@ -46,8 +87,10 @@ li a{
     flex-direction:column;
     align-items:center;
     gap:.25rem;
-    transition: color 250ms linear;
+    transition: color 1s ease-in-out;
 }
+
+/* Link hover border */
 
 .link-border{
     height:2.5px;
