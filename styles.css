@@ -13,6 +13,7 @@
 body{
     background-color:var(--bg-color);
     width:100%;
+    color:white;
 }
 
 /* Nav */
@@ -58,4 +59,33 @@ li a{
 li:hover a .link-border, li a:hover, #active{
     width:100px;
     color:lightblue;
+}
+
+/* Main */
+
+/* Intro */
+
+#intro{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100dvh;
+}
+
+#intro-welcome{
+    font-size:6vw;
+    color:lightgrey;
+}
+
+#my-intro, #text-slider{
+    font-size:3.5vw;
+}
+
+#intro-welcome, #my-intro, #text-slider{
+    font-weight:bold;
+}
+
+#text-slider{
+    color:orange;
 }
