@@ -18,51 +18,44 @@ body{
 /* Nav */
 
 nav{
+    margin-block:2rem;
+    padding:1.5rem;
     position:fixed;
-    width:100%;
-    padding:1rem;
+    left:10%;
+    width:90%;
+    background-color:rgb(0, 0, 160);
     display:flex;
     justify-content: space-evenly;
     align-items: center;
-}
-
-#logo{
-    font-size:x-large;
-    font-weight:bold;
-    font-style:italic;
-}
-
-#logo a{
-    color:white;
-    text-decoration:none;
+    border-radius:2.5rem 0rem 0rem 2.5rem;
 }
 
 #nav-links{
     list-style:none;
-    display: flex;
+    display:flex;
     justify-content: space-evenly;
-    gap:1rem;
-}
-
-li{
-    width:100px;
-    border-bottom:2.5px solid white;
-    text-align: center;
-    padding:1rem;
-}
-
-li:hover{
-    width:100px;
+    width:100%;
 }
 
 li a{
+    color:white;
+    width:100px;
     text-decoration:none;
-    color:lightgrey;
-    padding:.5rem;
-    border-radius:.25rem;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    gap:.25rem;
+    transition: color 250ms linear;
 }
 
-li a:hover{
-    background-color:white;
-    color:var(--bg-color);
+.link-border{
+    height:2.5px;
+    width:0px;
+    background-color:lightblue;
+    transition:width 500ms linear;
+}
+
+li:hover a .link-border, li a:hover, #active{
+    width:100px;
+    color:lightblue;
 }
