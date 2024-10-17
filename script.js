@@ -1,14 +1,15 @@
 // Nav-Bar
 
-const ham = document.getElementById('ham');
 const links = Array.from(document.getElementsByClassName('links'));
 const navLinks = document.getElementById('nav-links');
-let toggle = true;
+const logo = document.getElementById('logo');
+let toggler = true;
 
 function removeLinks(){
     links.forEach(link => {
         navLinks.removeChild(link);
         navLinks.style.width = '10%';
+        navLinks.style.opacity = '0';
     });
 }
 removeLinks();
@@ -17,39 +18,45 @@ function appendLinks(){
     links.forEach(link=>{
         navLinks.appendChild(link);
         navLinks.style.width = '75%';
+        navLinks.style.opacity = '1';
     })
 }
 
-const hamHead = document.getElementById('ham-head');
-const hamMid = document.getElementById('ham-mid');
-const hamEnd = document.getElementById('ham-end');
-
-function close(){
-    hamMid.style.display = 'none';
-    hamHead.style.top = '10%';
-    hamHead.style.rotate = '45deg';
-    hamEnd.style.bottom = '10%';
-    hamEnd.style.rotate = '-45deg';
-}
-
-function open(){
-    hamMid.style.display = 'block';
-    hamHead.style.top = '0%';
-    hamHead.style.rotate = '0deg';
-    hamEnd.style.bottom = '0%';
-    hamEnd.style.rotate = '0deg';
-}
-
-ham.addEventListener('click',()=>{
-        if(toggle){
-            appendLinks();
-            close();
-            toggle = false;
-        }
-        else{
-            removeLinks();
-            open();
-            toggle = true;
-        }
-
+logo.addEventListener('click', ()=>{
+    navLinks.classList.toggle('active');
+    if(toggler){
+        appendLinks();
+        toggler = false;
+    }
+    else{
+        removeLinks();
+        toggler = true;
+    }
 })
+
+// Main
+// Intro
+
+let textSlider = document.getElementById('text-slider');
+let tempText = Array.from(textSlider.innerText);
+let text = Array.from("web developer");
+let i=0,j=text.length;
+
+let timer = setInterval(()=>{
+    if(i < text.length){
+        tempText.push(text[i]);
+        textSlider.innerText = tempText.join('');
+        i++;
+    }
+    else{
+        tempText.pop();
+        textSlider.innerText = tempText.join('');
+        j--;
+        if(j == 0){
+            i = 0;
+            text = text.join('') === 'web developer' ? Array.from('student') : Array.from('web developer');
+            j=text.length;
+        }
+    }
+
+},250)

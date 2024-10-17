@@ -6,6 +6,10 @@
     user-select:none;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 :root{
     --bg-color:rgb(57, 3, 78);
 }
@@ -14,6 +18,7 @@ body{
     background-color:var(--bg-color);
     width:100%;
     color:white;
+    scroll-snap-type: y mandatory;
 }
 
 /* Nav */
@@ -30,25 +35,22 @@ nav{
 /* logo */
 
 #logo{
-    background-color:blue;
+    background-color:rgb(3, 3, 99);
     padding:1.5rem;
+    border:1px solid white;
+    border-left:0px;
     border-radius:0rem 1rem 1rem 0rem;
-    font-size:xx-large;
+    font-size:3vw;
     font-weight:bold;
     font-style:italic;
     cursor: pointer;
 }
 
-#logo a{
-    text-decoration: none;
-    color: white;
-}
-
 /* links */
 
 #nav-links{
+    font-size:large;
     width:10%;
-    overflow: hidden;
     margin-left:10%;
     padding:1.5rem;
     list-style:none;
@@ -56,7 +58,12 @@ nav{
     display:flex;
     justify-content: space-evenly;
     border-radius:2.5rem 0rem 0rem 2.5rem;
-    transition: width 500ms linear;
+    opacity: 0;
+    transition: width 250ms linear, opacity 250ms linear;
+}
+
+#nav-links.active{
+    opacity: 1;
 }
 
 /* Hamburger */
@@ -108,12 +115,13 @@ li:hover a .link-border, li a:hover, #active{
 
 /* Intro */
 
-#intro{
+#home, #about, #projects, #skills, #contact-me{
     display:flex;
     flex-direction:column;
     justify-content:center;
-    align-items:center;
+    align-items: center;
     height:100dvh;
+    scroll-snap-align: center;
 }
 
 #intro-welcome{
@@ -131,4 +139,20 @@ li:hover a .link-border, li a:hover, #active{
 
 #text-slider{
     color:orange;
+}
+
+#blinker{
+    display: inline;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation: blink 1s  infinite linear;
+}
+
+@keyframes blink {
+    0%,100%{
+        color:white;
+    }
+    50%{
+        color: transparent;
+    }
 }
