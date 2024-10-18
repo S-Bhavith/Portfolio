@@ -8,6 +8,7 @@
 
 html{
     scroll-behavior:smooth;
+    scroll-snap-type: y mandatory;
 }
 
 :root{
@@ -35,9 +36,8 @@ nav{
 /* logo */
 
 #logo{
-    background-color:rgb(3, 3, 99);
+    background-color:darkblue;
     padding:1.5rem;
-    border:1px solid white;
     border-left:0px;
     border-radius:0rem 1rem 1rem 0rem;
     font-size:3vw;
@@ -115,6 +115,10 @@ li:hover a .link-border, li a:hover, #active{
 
 /* Intro */
 
+#home{
+    background:linear-gradient(45deg, purple, var(--bg-color));
+}
+
 #home, #about, #projects, #skills, #contact-me{
     display:flex;
     flex-direction:column;
@@ -122,6 +126,10 @@ li:hover a .link-border, li a:hover, #active{
     align-items: center;
     height:100dvh;
     scroll-snap-align: center;
+}
+
+.sec:nth-child(even){
+    background-color: rgb(0, 0, 75);
 }
 
 #intro-welcome{
