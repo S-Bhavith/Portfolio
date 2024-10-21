@@ -37,19 +37,29 @@ nav{
 
 #logo{
     font-size:xx-large;
+    flex-grow: 1;
 }
 
 ul{
     list-style:none;
     display:flex;
     justify-content: space-evenly;
+    flex-grow: 3;
+}
+
+#hamburger{
+    display: none;
 }
 
 /* Hamburger */
 
-@media (max-width:720px){
-    #ham{
+@media (max-width:768px){
+    #hamburger{
+        position: relative;
+        right:5%;
         cursor:pointer;
+        background-color: transparent;
+        border: none;
         display:flex;
         flex-direction:column;
         justify-content: space-evenly;
@@ -61,6 +71,28 @@ ul{
         width:35px;
         background-color:white;
         border-radius:2.5px;
+        z-index:2;
+        transition: opacity 500ms linear, rotate 500ms linear;
+    }
+
+    #ham-mid-first{
+        position: absolute;
+    }
+
+    ul{
+        display: none;
+    }
+
+    .active-nav-bar{
+        display: flex;
+        position: absolute;
+        right:0;
+        top:0;
+        background-color: rgba(255, 255, 255, 0.3);
+        padding-inline:1.5rem;
+        backdrop-filter: blur(5px);
+        height:100dvh;
+        flex-direction:column;
     }
 }
 
