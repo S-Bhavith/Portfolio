@@ -182,8 +182,7 @@ li:hover a .link-border, li a:hover, #active{
 /* About */
 
 #about{
-    margin-top:5rem;
-    padding:2.5rem;
+    padding-top:5rem;
     height:fit-content;
     min-height:100dvh;
 }
@@ -212,11 +211,10 @@ li:hover a .link-border, li a:hover, #active{
 
 #about-cover img{
     width:15vw;
-    /* aspect-ratio: 1/1; */
     background-position: center;
     background-size:cover;
     margin:1rem;
-    border-radius:50rem;
+    border-radius:10rem;
 }
 
 #details{
@@ -228,4 +226,15 @@ li:hover a .link-border, li a:hover, #active{
 #details b{
     font-size:x-large;
     font-weight:bold;
+}
+
+@media (max-width:768px){
+    #about-cover{
+        width:90%;
+    }
+
+    #about-cover img{
+        width:auto;
+        height:30vh;
+    }
 }
