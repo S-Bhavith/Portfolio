@@ -229,6 +229,16 @@ li:hover a .link-border, li a:hover, #active{
 }
 
 @media (max-width:768px){
+    /* Main */
+    #intro-welcome{
+        font-size: 6.5vw;
+    }
+
+    #my-intro, #text-slider{
+        font-size:4.5vw;
+    }
+
+    /* About */
     #about-cover{
         width:90%;
     }
