@@ -8,6 +8,7 @@
 
 html{
     scroll-behavior:smooth;
+    scroll-snap-type: y mandatory;
 }
 
 :root{
@@ -135,6 +136,7 @@ li:hover a .link-border, li a:hover, #active{
 }
 
 #home, #about, #projects, #skills, #contact-me{
+    scroll-snap-align: center;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -222,6 +224,15 @@ li:hover a .link-border, li a:hover, #active{
     text-align:center;
 }
 
+#picture{
+    background-image: url('Profile.jpg');
+    background-position: top;
+    background-size: cover;
+    height:25vh;
+    aspect-ratio: 1/1;
+    border-radius:50%;
+}
+
 #details b{
     font-size:x-large;
     font-weight:bold;
@@ -230,11 +241,11 @@ li:hover a .link-border, li a:hover, #active{
 @media (max-width:768px){
     /* Main */
     #intro-welcome{
-        font-size: 6.5vw;
+        font-size: 7vw;
     }
 
     #my-intro, #text-slider{
-        font-size:4.5vw;
+        font-size:5vw;
     }
 
     /* About */
