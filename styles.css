@@ -8,7 +8,6 @@
 
 html{
     scroll-behavior:smooth;
-    scroll-snap-type: y mandatory;
 }
 
 :root{
@@ -136,7 +135,6 @@ li:hover a .link-border, li a:hover, #active{
 }
 
 #home, #about, #projects, #skills, #contact-me{
-    scroll-snap-align: center;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -261,3 +259,33 @@ li:hover a .link-border, li a:hover, #active{
 
 /* Projects */
 
+#projects{
+    height:100dvh;
+}
+
+#projects p{
+    font-size:2.5em;
+}
+
+#projects-container{
+    height:80dvh;
+    padding:2.5rem;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    column-gap:10vmin;
+    row-gap:1rem;
+}
+
+.project-card{
+    height:25vmin;
+    aspect-ratio: 1/1;
+    border-radius:1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.project-title{
+    text-align:center;
+    padding-top:1rem;
+    font-size:large;
+}
