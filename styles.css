@@ -278,6 +278,11 @@ li:hover a .link-border, li a:hover, #active{
 }
 
 .project-card{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-decoration:none;
     height:25vmin;
     aspect-ratio: 1/1;
     border-radius:1rem;
