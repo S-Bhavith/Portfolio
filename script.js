@@ -1,3 +1,10 @@
+// Cursor
+let cursor = document.getElementById('cursor');
+document.addEventListener('mousemove',e=>{
+    cursor.style.visibility="visible";
+    cursor.style.transform = `translateX(${e.pageX-12.5}px) translateY(${e.pageY-12.5}px)`;
+})
+
 // Responsive nav bar
 let toggle = true;
 let hamStart = document.getElementById('ham-start');
