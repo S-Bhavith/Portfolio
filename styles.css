@@ -299,6 +299,37 @@ li:hover a .link-border, li a:hover, #active{
 }
 
 footer{
-    background-color:grey;
+    background-color:rgba(5, 84, 116,0.2);
+    backdrop-filter: blur(5px);
     height:50vh;
+}
+
+#mail{
+    display:flex;
+    align-items:center;
+    justify-content:space-evenly;
+    flex-direction:column;
+    gap:2.5rem;
+    border:2.5px solid white;
+    border-radius:1rem;
+    padding:1rem;
+    font-size:x-large;
+}
+
+#mail label input{
+    padding:.75rem;
+    outline:none;
+}
+
+#mail label input, #mail button{
+    font-size:large;
+    background-color:transparent;
+    border:1.5px solid white;
+    border-radius:1rem;
+    color:white;
+}
+
+#mail button{
+    width:100%;
+    padding:.5rem;
 }
