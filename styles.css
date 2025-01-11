@@ -6,9 +6,12 @@
     user-select:none;
 }
 
-html, body{
-    scroll-behavior:smooth;
+body{
+    color:white;
+	cursor:none;
 	height:100%;
+	width:100%;
+	overflow: hidden;
 }
 
 @font-face {
@@ -18,21 +21,48 @@ html, body{
 	font-style:normal;
 }
 
-:root{
-    --bg-color:rgb(57, 3, 78);
+#cover{
+	position:fixed;
+	width:100dvw;
+	height:100dvh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	overflow:hidden;
+   	z-index:-1;
 }
 
-body{
-    background-color:var(--bg-color);
-    width:100%;
-    color:white;
+#bg-cover{
+	height:250vmin;
+	aspect-ratio:1/1;
+	background:linear-gradient(0deg, green, rgb(0, 0, 175));
+	transform-origin:center;
+	animation: spinBackground 15s infinite linear;
+}
+
+@keyframes spinBackground {
+	0%{
+		transform:rotate(0deg);
+	}
+	100%{
+		transform:rotate(360deg);
+	}
 }
 
 #cursor {
 	position:absolute;
 	background-color:white;
+	height:10px;
+	width:10px;
+	border:1px solid black;
 	border-radius: 50%;
-	box-shadow: 0px 0px 5px 5px;
+	box-shadow: 0px 0px 8px 8px;
+}
+
+.cur{
+	height:10px;
+	width:10px;
+	background-color:white;
 }
 
 @media (max-width:720px){
@@ -44,7 +74,7 @@ body{
 /* Nav */
 
 nav{
-    position:fixed;
+    position:sticky;
     width:100%;
     display:flex;
     justify-content: space-between;
@@ -159,6 +189,7 @@ li:hover a .link-border, li a:hover, #active{
 
 main{
 	height:100dvh;
+	width:100%;
 	overflow-y: scroll;
 	scroll-snap-type: y mandatory;
 }
@@ -169,10 +200,6 @@ main{
 }
 
 /* Intro */
-
-#home{
-    height:100dvh;
-}
 
 #home, #about, #projects, #skills, #contact-me{
     display:flex;
@@ -236,14 +263,6 @@ main{
     justify-content: center;
     flex-direction:column;
     padding:1rem;
-}
-
-#about-cover img{
-    width:15vw;
-    background-position: center;
-    background-size:cover;
-    margin:1rem;
-    border-radius:10rem;
 }
 
 #details{
