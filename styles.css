@@ -1,13 +1,21 @@
 *{
     padding:0;
     margin:0;
-    font-family:sans-serif, 'Arial', monospace;
+	font-family: "Chakra Petch", serif;
     box-sizing:border-box;
     user-select:none;
 }
 
-html{
+html, body{
     scroll-behavior:smooth;
+	height:100%;
+}
+
+@font-face {
+	font-family: 'SD Dystopian';
+	src: url('Sddystopiandemo-GO7xa.otf') format('opentype');
+    font-weight:bold;
+	font-style:normal;
 }
 
 :root{
@@ -20,16 +28,17 @@ body{
     color:white;
 }
 
-/* Cursor */
+#cursor {
+	position:absolute;
+	background-color:white;
+	border-radius: 50%;
+	box-shadow: 0px 0px 5px 5px;
+}
 
-#cursor{
-    position: absolute;
-    border-radius:50%;
-    height:25px;
-    width:25px;
-    border:2.5px solid white;
-    z-index:-1;
-    visibility: hidden;
+@media (max-width:720px){
+	#cursor{
+		display:none;
+	}
 }
 
 /* Nav */
@@ -40,19 +49,23 @@ nav{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding:1rem;
+    padding:.25rem;
     backdrop-filter:blur(20px);
     background-color: rgba(255, 255, 255, 0.2);
     z-index:2;
 }
 
 #logo{
-    font-size:xx-large;
-    font-weight:bold;
+    font-size:2.75rem;
     display: flex;
     justify-content: center;
+	align-item:center;
     flex-grow: 1;
-    text-align: center;
+}
+
+#logo nobr{
+	font-family: 'SD Dystopian';
+	margin-bottom:.25rem;
 }
 
 ul{
@@ -123,6 +136,10 @@ li a{
     transition: color 1s ease-in-out;
 }
 
+li a nobr{
+	word-spacing:10px;
+}
+
 /* Link hover border */
 
 .link-border{
@@ -135,28 +152,34 @@ li a{
 li:hover a .link-border, li a:hover, #active{
     width:100px;
     color:lightblue;
+    cursor:none;
 }
 
 /* Main */
 
+main{
+	height:100dvh;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+}
+
+.sec{
+	scroll-snap-align:start;
+	height:100vh;
+}
+
 /* Intro */
 
 #home{
-    /* background:linear-gradient(45deg, purple, var(--bg-color)); */
     height:100dvh;
 }
 
 #home, #about, #projects, #skills, #contact-me{
-    /* background-color: transparent; */
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items: center;
 }
-
-/* .sec:nth-child(even){
-    background-color: rgb(0, 0, 75);
-} */
 
 #intro-welcome{
     font-size:6vw;
@@ -296,12 +319,6 @@ li:hover a .link-border, li a:hover, #active{
     border-radius:1rem;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
-}
-
-footer{
-    background-color:rgba(5, 84, 116,0.2);
-    backdrop-filter: blur(5px);
-    height:50vh;
 }
 
 #mail{

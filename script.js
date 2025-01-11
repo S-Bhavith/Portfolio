@@ -1,8 +1,13 @@
 // Cursor
-let cursor = document.getElementById('cursor');
-document.addEventListener('mousemove',e=>{
-    cursor.style.visibility="visible";
-    cursor.style.transform = `translateX(${e.pageX-12.5}px) translateY(${e.pageY-12.5}px)`;
+const cursor = document.getElementById("cursor");
+
+document.addEventListener('mousemove', (e)=>{
+	cursor.style.visibility = "visible";
+	cursor.style.transform = `translateX(${e.pageX}px) translateY(${e.pageY}px)`;
+})
+
+document.addEventListener('scroll', ()=>{
+	cursor.style.visibility = "hidden";
 })
 
 // Responsive nav bar
