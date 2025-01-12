@@ -1,7 +1,14 @@
+@font-face {
+	font-family: "Chakra Petch";
+	src: url('fonts/ChakraPetch-Bold.ttf');
+    font-weight:bold;
+	font-style:normal;
+}
+
 *{
     padding:0;
     margin:0;
-	font-family: "Chakra Petch", serif;
+	font-family: "Chakra Petch", monospace, sans-serif;
     box-sizing:border-box;
     user-select:none;
 }
@@ -16,7 +23,7 @@ body{
 
 @font-face {
 	font-family: 'SD Dystopian';
-	src: url('Sddystopiandemo-GO7xa.otf') format('opentype');
+	src: url('fonts/Sddystopiandemo-GO7xa.otf') format('opentype');
     font-weight:bold;
 	font-style:normal;
 }
@@ -33,8 +40,9 @@ body{
 }
 
 #bg-cover{
-	height:250vmin;
+	height:250rem;
 	aspect-ratio:1/1;
+	border-radius:50%;
 	background:linear-gradient(0deg, green, rgb(0, 0, 175));
 	transform-origin:center;
 	animation: spinBackground 15s infinite linear;
@@ -74,7 +82,7 @@ body{
 /* Nav */
 
 nav{
-    position:sticky;
+    position:fixed;
     width:100%;
     display:flex;
     justify-content: space-between;
@@ -166,8 +174,16 @@ li a{
     transition: color 1s ease-in-out;
 }
 
+.icons{
+	height:1.5rem;
+	aspect-ratio:1/1;
+	filter:invert(100%);
+}
+
 li a nobr{
-	word-spacing:10px;
+	display:flex;
+	align-items:center;
+	gap:.75rem;
 }
 
 /* Link hover border */
@@ -176,7 +192,7 @@ li a nobr{
     height:2.5px;
     width:0px;
     background-color:lightblue;
-    transition:width 500ms linear;
+    transition:width 250ms linear;
 }
 
 li:hover a .link-border, li a:hover, #active{
@@ -189,7 +205,6 @@ li:hover a .link-border, li a:hover, #active{
 
 main{
 	height:100dvh;
-	width:100%;
 	overflow-y: scroll;
 	scroll-snap-type: y mandatory;
 }

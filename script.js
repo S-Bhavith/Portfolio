@@ -42,7 +42,9 @@ let tempText = Array.from(textSlider.innerText);
 let text = Array.from("web developer");
 let i=0,j=text.length;
 
-let timer = setInterval(()=>{
+let interval = setInterval(textInserter,250)
+
+function textInserter(){
     if(i < text.length){
         tempText.push(text[i]);
         textSlider.innerText = tempText.join('');
@@ -59,4 +61,4 @@ let timer = setInterval(()=>{
         }
     }
 
-},250)
+}
