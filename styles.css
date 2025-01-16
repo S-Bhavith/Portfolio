@@ -15,10 +15,10 @@
 
 body{
     color:white;
-	cursor:none;
+	cursor:url('mouse.png');
 	height:100%;
 	width:100%;
-	overflow: hidden;
+	overflow: scroll;
 }
 
 @font-face {
@@ -195,7 +195,7 @@ li a nobr{
     transition:width 250ms linear;
 }
 
-li:hover a .link-border, li a:hover, #active{
+.active, li:hover a .link-border, li a:hover, #active{
     width:100px;
     color:lightblue;
     cursor:none;

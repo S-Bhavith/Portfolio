@@ -35,6 +35,7 @@ document.getElementById("hamburger").addEventListener('click',()=>{
 })
 
 // Main
+
 // Intro
 
 let textSlider = document.getElementById('text-slider');
